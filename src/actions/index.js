@@ -22,3 +22,18 @@ export function addNewItem(item) {
 		payload: response
 	}
 }
+
+export function getSingleItem(id) {
+	const response = axios.get(`${BASE_URL}/todos/${id + API_KEY}`);
+
+	return {
+		type: types.GET_SINGLE_ITEM,
+		payload: response
+	}
+}
+
+//Delete Item:
+//axios.delete(`${BASE_URL}/todos/${id + API_KEY}`);
+//
+//Toggle Complete:
+//axios.put(`${BASE_URL}/todos/${id + API_KEY}`);
