@@ -9,10 +9,13 @@ class List extends Component {
 	}
 
 	render(){
-		console.log('list.js PROPS:', this.props);
+		// console.log('list.js PROPS:', this.props);
 		const itemElements = this.props.list.map((item, index)=>{
+			// console.log('Item:', item);
 			return(
-				<li className='collection-item' key={index}>{item.title}</li>
+				<li className='collection-item' key={index}>
+					<Link to={`/item/${item._id}`}>{item.title}</Link>
+				</li>
 			);
 		});
 
